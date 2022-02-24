@@ -8,6 +8,6 @@
     "allowJs": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/components/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
