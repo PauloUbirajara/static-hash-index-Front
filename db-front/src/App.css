@@ -1,0 +1,11 @@
+.main {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+
+  width: clamp(600px, 50%, 800px);
+  padding: 30px;
+
+  justify-content: center;
+  align-items: center;
+}
