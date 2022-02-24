@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
