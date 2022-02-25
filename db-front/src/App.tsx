@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import SettingsComponent from './components/Settings/SettingsComponent'
 
 
@@ -8,7 +9,7 @@ const App = () => {
 
   const updatePageSize = (value: number) => {
     setPageSize(value)
-  
+
     /*
      TODO
         - Enviar request para backend informando tamanho individual de página
