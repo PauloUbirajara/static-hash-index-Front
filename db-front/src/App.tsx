@@ -19,9 +19,7 @@ const App = () => {
 
 
   return <>
-    <div>
-      <SettingsComponent updatePageSize={updatePageSize} />
-    </div>
+    <SettingsComponent updatePageSize={updatePageSize} />
   </>
 }
 
