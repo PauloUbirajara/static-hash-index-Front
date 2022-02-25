@@ -8,7 +8,13 @@ const App = () => {
 
   const updatePageSize = (value: number) => {
     setPageSize(value)
-    console.log(pageSize)
+  
+    /*
+     TODO
+        - Enviar request para backend informando tamanho individual de página
+        - Mostrar dados retornados em request de backend
+        - Definir endpoints para mostrar outras telas de visualização/estatísticas
+     */
   }
 
 
