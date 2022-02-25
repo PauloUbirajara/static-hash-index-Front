@@ -6,7 +6,8 @@
     "preserveConstEnums": true,
     "esModuleInterop": true,
     "allowJs": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "moduleResolution": "node"
   },
   "include": ["src/**/*", "src/components/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
