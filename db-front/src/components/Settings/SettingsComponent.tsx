@@ -22,7 +22,6 @@ const SettingsComponent = (props: SettingsProps) => {
     setPageSize(+el.target.value)
   }
 
-
   return <>
     <div className="settings">
       <h1>Digite o tamanho individual da página:</h1>
