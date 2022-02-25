@@ -35,6 +35,15 @@ input {
 
 button {
   cursor: pointer;
+  transition: 250ms ease-in-out filter;
+}
+
+button:hover {
+  filter: saturate(1.2);
+}
+
+button:active {
+  filter: opacity(0.8);
 }
 
 input, button {
