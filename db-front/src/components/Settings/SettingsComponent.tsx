@@ -1,4 +1,7 @@
 import { useState } from 'react'
+
+import Button from '../Button/ButtonComponent'
+
 import './SettingsComponent.css'
 
 
@@ -31,10 +34,10 @@ const SettingsComponent = (props: SettingsProps) => {
         min='1'
         onChange={onChange}
       />
-      <button
-        className='primary-button'
+      <Button
+        text="Ver banco de dados"
         onClick={onClick}
-      >Configurar</button>
+      />
     </div>
   </>
 }
