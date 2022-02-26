@@ -26,7 +26,7 @@ const CenterStuff = styled.div`
 
 const SettingsComponent = () => {
   const [pageSize, setPageSize] = useState(1)
-  
+
   const onChange = (el: any) => {
     setPageSize(+el.target.value)
   }
@@ -45,7 +45,7 @@ const SettingsComponent = () => {
         <ButtonComponent
           text="Ver banco de dados"
           to={`/database/${pageSize}`}
-        ></ButtonComponent>
+        />
       </Settings>
     </CenterStuff>
   )
