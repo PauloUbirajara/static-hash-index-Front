@@ -36,7 +36,7 @@ const ButtonComponent = (props: ButtonProps) => {
   const { text, onClick, to } = props
 
   if (to) {
-    <LinkButton to={to} onClick={onClick}>{text}</LinkButton>
+    return <LinkButton to={to} onClick={onClick}>{text}</LinkButton>
   }
 
   return <Button onClick={onClick}>{text}</Button>
