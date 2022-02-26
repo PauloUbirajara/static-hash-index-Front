@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import ButtonComponent from '../Button/ButtonComponent'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
-type SettingsProps = {
-  updatePageSize: (value: number) => void
-}
+
+import ButtonComponent from '../Button/ButtonComponent'
+
 
 const Settings = styled.div`
   display: grid;
@@ -26,17 +24,9 @@ const CenterStuff = styled.div`
   align-items: center;
 `
 
-const SettingsComponent = (props: SettingsProps) => {
-  const { updatePageSize } = props
-  const [pageSize, setPageSize] = useState(0)
-
-
-  const onClick = () => {
-    if (!pageSize || pageSize <= 0) return
-
-    updatePageSize(pageSize)
-  }
-
+const SettingsComponent = () => {
+  const [pageSize, setPageSize] = useState(1)
+  
   const onChange = (el: any) => {
     setPageSize(+el.target.value)
   }
@@ -49,17 +39,17 @@ const SettingsComponent = (props: SettingsProps) => {
           type="number"
           placeholder='Digite um número'
           min='1'
+          defaultValue={pageSize}
           onChange={onChange}
         />
         <ButtonComponent
           text="Ver banco de dados"
-          onClick={onClick}
-          to='god'
+          to={`/database/${pageSize}`}
         ></ButtonComponent>
       </Settings>
     </CenterStuff>
   )
-    
 }
+
 
 export default SettingsComponent
