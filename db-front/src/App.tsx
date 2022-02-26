@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SettingsComponent from './components/Settings/SettingsComponent'
+import { SettingsComponent, DatabasePage, StatsPage } from './pages/index'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 const App = () => {
@@ -20,6 +20,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route path='/' element={<SettingsComponent updatePageSize={updatePageSize} />} />
+        <Route path='/database' element={<DatabasePage />} />
+        <Route path='/stats' element={<StatsPage />} />
       </Routes>
     </Router>
     

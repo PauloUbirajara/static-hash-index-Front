@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ButtonComponent from '../Button/ButtonComponent'
+import ButtonComponent from '../components/Button/ButtonComponent'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -26,7 +26,7 @@ const CenterStuff = styled.div`
   align-items: center;
 `
 
-const SettingsComponent = (props: SettingsProps) => {
+export const SettingsComponent = (props: SettingsProps) => {
   const { updatePageSize } = props
   const [pageSize, setPageSize] = useState(0)
 
@@ -54,12 +54,10 @@ const SettingsComponent = (props: SettingsProps) => {
         <ButtonComponent
           text="Ver banco de dados"
           onClick={onClick}
-          to='god'
+          to='database'
         ></ButtonComponent>
       </Settings>
     </CenterStuff>
   )
     
 }
-
-export default SettingsComponent
