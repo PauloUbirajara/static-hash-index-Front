@@ -7,17 +7,18 @@ type ButtonProps = {
   to?: string
 }
 
-const Button = styled(Link)`
+const Button = styled.button`
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 250ms ease-in-out filter;
-  border-radius: var(--border-radius);
   padding: 5px 15px;
-  font-weight: 700;
+
   background: var(--secondary-color);
   color: var(--foreground-color);
+  border-radius: var(--border-radius);
+  font-weight: 700;
 
   &:hover{
     filter: saturate(1.2);
@@ -28,13 +29,17 @@ const Button = styled(Link)`
   }
 `
 
+const LinkButton = styled(Link)(Button)
+
+
 const ButtonComponent = (props: ButtonProps) => {
   const { text, onClick, to } = props
 
-  return (
-    <Button to={to} onClick={onClick}>{text}</Button>
-  )
-  
+  if (to) {
+    <LinkButton to={to} onClick={onClick}>{text}</LinkButton>
+  }
+
+  return <Button onClick={onClick}>{text}</Button>
 }
 
 export default ButtonComponent
