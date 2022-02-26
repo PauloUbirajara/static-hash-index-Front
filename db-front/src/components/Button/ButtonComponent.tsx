@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 type ButtonProps = {
   text: string
-  onClick: () => void
-  to: string
+  onClick?: () => void
+  to?: string
 }
 
 const Button = styled(Link)`
