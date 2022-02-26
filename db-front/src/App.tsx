@@ -1,29 +1,21 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+
 import SettingsComponent from './components/Settings/SettingsComponent'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import DatabaseComponent from './components/Database/DatabaseComponent'
+
 
 const App = () => {
-  const [pageSize, setPageSize] = useState(0)
-
-  const updatePageSize = (value: number) => {
-    setPageSize(value)
-
-    /*
-     TODO
-        - Enviar request para backend informando tamanho individual de página
-        - Mostrar dados retornados em request de backend
-        - Definir endpoints para mostrar outras telas de visualização/estatísticas
-     */
-  }
-
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<SettingsComponent updatePageSize={updatePageSize} />} />
+        <Route path='/' element={<SettingsComponent />} />
+        <Route path='/database/:pageSize' element={<DatabaseComponent />} />
       </Routes>
     </Router>
-    
+
   )
 }
+
 
 export default App
