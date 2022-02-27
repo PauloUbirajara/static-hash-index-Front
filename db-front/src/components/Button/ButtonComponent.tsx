@@ -1,19 +1,30 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+
+import { IconComponent, IconEnum } from '../Icon/IconComponent'
+
+
 type ButtonProps = {
   text: string
   onClick?: () => void
   to?: string
+  icon?: IconEnum
 }
 
+
 const Button = styled.button`
-  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 7px;
+
   transition: 250ms ease-in-out filter;
   padding: 5px 15px;
+
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
 
   background: var(--secondary-color);
   color: var(--foreground-color);
@@ -29,17 +40,29 @@ const Button = styled.button`
   }
 `
 
-const LinkButton = styled(Link)(Button)
-
-
 const ButtonComponent = (props: ButtonProps) => {
-  const { text, onClick, to } = props
+  const { text, onClick, to, icon } = props
 
   if (to) {
-    return <LinkButton to={to} onClick={onClick}>{text}</LinkButton>
+    return <Link to={to}>
+
+      <Button>
+        {icon && <IconComponent icon={icon} />}
+        <span>{text}</span></Button>
+    </Link>
   }
 
-  return <Button onClick={onClick}>{text}</Button>
+  return (
+    <Button
+      onClick={onClick}
+    >
+      {icon && <IconComponent icon={icon} />}
+      <span>{text}</span>
+    </Button>
+  )
 }
 
-export default ButtonComponent
+
+export {
+  ButtonComponent
+}
