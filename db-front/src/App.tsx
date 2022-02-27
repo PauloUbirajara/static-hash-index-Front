@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
-import SettingsComponent from './components/Settings/SettingsComponent'
-import DatabaseComponent from './components/Database/DatabaseComponent'
+import SettingsPage from './pages/SettingsPage'
+import DatabasePage from './pages/DatabasePage'
+import StatsPage from './pages/StatsPage'
 
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<SettingsComponent />} />
-        <Route path='/database/:pageSize' element={<DatabaseComponent />} />
+        <Route path='/' element={<SettingsPage />} />
+        <Route path='/database/:pageSize' element={<DatabasePage />} />
+        <Route path='/stats' element={<StatsPage />} />
       </Routes>
     </Router>
 
