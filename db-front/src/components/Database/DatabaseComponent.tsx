@@ -2,17 +2,17 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 
-import Button from '../Button/ButtonComponent'
+import { ButtonComponent } from '../Button/ButtonComponent'
+import { IconEnum } from '../Icon/IconComponent'
 
 
 const DatabaseContainer = styled.div`
     margin: 30px;
     padding: 25px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    display: grid;
+    justify-content: stretch;
+    gap: 15px;
 
     background: var(--primary-color);
     color: var(--foreground-color);
@@ -25,6 +25,7 @@ const DatabaseComponent = () => {
 
   return <>
     <DatabaseContainer>
+      <ButtonComponent text="Voltar" to="/" />
       <h1>Banco de dados</h1>
 
       <h2>Tamanho individual de página: {pageSize}</h2>
@@ -36,7 +37,11 @@ const DatabaseComponent = () => {
         autoComplete="false"
         name="key-input"
       />
-      <Button text="Pesquisar" onClick={null} />
+      <ButtonComponent
+        icon={IconEnum.SEARCH}
+        text="Pesquisar"
+        onClick={null}
+      />
 
     </DatabaseContainer>
   </>
