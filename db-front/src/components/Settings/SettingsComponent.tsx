@@ -2,7 +2,8 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 
-import ButtonComponent from '../Button/ButtonComponent'
+import { ButtonComponent } from '../Button/ButtonComponent'
+import { IconEnum } from '../Icon/IconComponent'
 
 
 const Settings = styled.div`
@@ -43,6 +44,7 @@ const SettingsComponent = () => {
           onChange={onChange}
         />
         <ButtonComponent
+          icon={IconEnum.OPEN_DATABASE}
           text="Ver banco de dados"
           to={`/database/${pageSize}`}
         />
