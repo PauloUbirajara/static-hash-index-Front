@@ -1,51 +1,40 @@
-import React, { FC } from 'react'
+import { ReactElement } from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
-const Header = styled.header`
-    text-align: center;
-    background-color: #beacac67;
-`
+
+import { ButtonComponent } from '../components/Button/ButtonComponent'
+
 
 const NavBar = styled.div`
-    display: flex;
-    justify-content: center;
-    ul{
-        list-style: none;
-        background-color: #333;
-        margin: 20px auto;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 75px;
+  gap: 25px;
+  padding: 25px;
 
-    ul li{
-        float: left;
-        padding: 10px;
-    }
-    ul li:hover{
-        background-color: #918888;
-        a{
-            color: black;
-        }
-    }
-    ul li a{
-        text-decoration: none;
-        color: white;
-        padding: 10px 50px;
-    }
+  *{
+    font-size: 1.25rem;
+  }
 `
 
-const MainTemplate: FC = ({ children }) => (
-    <>
-        <Header>
-            <NavBar>
-                <ul>
-                <li><Link to='/'>back</Link></li>
-                    <li><Link to='/stats'>stats</Link></li>
-                    <li><Link to='/database'>database</Link></li>
-                </ul>
-            </NavBar>
-        </Header>
-        {children}
-    </>
-)
+
+type MainTemplateProps = {
+  children: ReactElement
+}
+
+
+const MainTemplate = (props: MainTemplateProps) => {
+  const { children } = props
+
+  return <>
+    <NavBar>
+      <ButtonComponent to='/' text="Configurar tamanho de página" />
+      <ButtonComponent to='/database/1' text="Ver Banco de Dados" />
+      <ButtonComponent to='/stats' text="Estatísticas" />
+    </NavBar>
+    {children}
+  </>
+}
+
 
 export default MainTemplate
