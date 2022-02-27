@@ -44,22 +44,22 @@ const ButtonComponent = (props: ButtonProps) => {
   const { text, onClick, to, icon } = props
 
   if (to) {
-    return <Link to={to}>
-
-      <Button>
-        {icon && <IconComponent icon={icon} />}
-        <span>{text}</span></Button>
-    </Link>
+    return <>
+      <Link to={to}>
+        <Button>
+          {icon && <IconComponent icon={icon} />}
+          <span>{text}</span></Button>
+      </Link>
+    </>
   }
 
-  return (
+  return <>
     <Button
-      onClick={onClick}
-    >
+      onClick={onClick} >
       {icon && <IconComponent icon={icon} />}
       <span>{text}</span>
     </Button>
-  )
+  </>
 }
 
 
