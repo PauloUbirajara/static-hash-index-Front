@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<SettingsPage pageSize={pageSize} updatePageSize={setPageSize} />} />
         <Route path='/database' element={<DatabasePage pageSize={pageSize} />} />
-        <Route path='/stats' element={<StatsPage />} />
+        <Route path='/stats' element={<StatsPage pageSize={pageSize} />} />
       </Routes>
     </Router>
   )
