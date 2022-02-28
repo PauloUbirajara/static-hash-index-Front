@@ -21,7 +21,7 @@ const Settings = styled.div`
 `
 
 
-const SettingsPage = () => {
+export const SettingsPage = () => {
   const [pageSize, setPageSize] = useState(1)
 
   const onChange = (el: any) => {
@@ -50,6 +50,3 @@ const SettingsPage = () => {
     </MainTemplate>
   )
 }
-
-
-export default SettingsPage

@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
-import SettingsPage from './pages/SettingsPage'
-import DatabasePage from './pages/DatabasePage'
-import StatsPage from './pages/StatsPage'
+import { SettingsPage, DatabasePage, StatsPage } from './pages'
 
 
 const App = () => {
@@ -15,7 +13,6 @@ const App = () => {
         <Route path='/stats' element={<StatsPage />} />
       </Routes>
     </Router>
-
   )
 }
 

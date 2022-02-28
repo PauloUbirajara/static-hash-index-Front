@@ -6,7 +6,7 @@ import { ButtonComponent } from '../components/Button/ButtonComponent'
 import { IconEnum } from '../components/Icon/IconComponent'
 
 
-const DatabasePage = () => {
+export const DatabasePage = () => {
   const { pageSize } = useParams()
 
 
@@ -31,6 +31,3 @@ const DatabasePage = () => {
     </div>
   </MainTemplate>
 }
-
-
-export default DatabasePage
