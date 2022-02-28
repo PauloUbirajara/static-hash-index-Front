@@ -1,14 +1,14 @@
-import { useParams } from 'react-router-dom'
-
-
 import MainTemplate from '../common/MainTemplate'
 import { ButtonComponent } from '../components/Button/ButtonComponent'
 import { IconEnum } from '../components/Icon/IconComponent'
 
 
-export const DatabasePage = () => {
-  const { pageSize } = useParams()
+type DatabaseProps = {
+  pageSize: number
+}
 
+export const DatabasePage = (props: DatabaseProps) => {
+  const { pageSize } = props
 
   return <MainTemplate>
     <div className="database">

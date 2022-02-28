@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -20,12 +19,17 @@ const Settings = styled.div`
   border-radius: var(--border-radius);
 `
 
+type SettingsProps = {
+  pageSize: number
+  updatePageSize: Function
+}
 
-export const SettingsPage = () => {
-  const [pageSize, setPageSize] = useState(1)
+export const SettingsPage = (props: SettingsProps) => {
+  const { pageSize, updatePageSize } = props
 
   const onChange = (el: any) => {
-    setPageSize(+el.target.value)
+    const newPageSize = +el.target.value
+    updatePageSize(newPageSize)
   }
 
   return (
@@ -43,7 +47,7 @@ export const SettingsPage = () => {
           <ButtonComponent
             icon={IconEnum.OPEN_DATABASE}
             text="Ver banco de dados"
-            to={`/database/${pageSize}`}
+            to='/database'
           />
         </Settings>
       </CenteredDiv>

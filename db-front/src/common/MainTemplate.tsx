@@ -29,7 +29,7 @@ const MainTemplate = (props: MainTemplateProps) => {
   return <>
     <NavBar>
       <ButtonComponent to='/' text="Configurar tamanho de página" />
-      <ButtonComponent to='/database/1' text="Ver Banco de Dados" />
+      <ButtonComponent to='/database' text="Ver Banco de Dados" />
       <ButtonComponent to='/stats' text="Estatísticas" />
     </NavBar>
     {children}
