@@ -1,9 +1,7 @@
-import { ReactElement } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { ReactElement } from 'react';
 
-
-import { ButtonComponent } from '../components/Button/ButtonComponent'
-
+import { ButtonComponent } from '../components';
 
 const NavBar = styled.div`
   display: grid;
@@ -15,25 +13,23 @@ const NavBar = styled.div`
   *{
     font-size: 1.25rem;
   }
-`
-
+`;
 
 type MainTemplateProps = {
-  children: ReactElement
-}
+  children: ReactElement;
+};
 
+export const MainTemplate = (props: MainTemplateProps) => {
+  const { children } = props;
 
-const MainTemplate = (props: MainTemplateProps) => {
-  const { children } = props
-
-  return <>
-    <NavBar>
-      <ButtonComponent to='/' text="Configurar tamanho de página" />
-      <ButtonComponent to='/database' text="Banco de Dados" />
-      <ButtonComponent to='/stats' text="Estatísticas" />
-    </NavBar>
-    {children}
-  </>
-}
-
-export default MainTemplate
+  return (
+    <>
+      <NavBar>
+        <ButtonComponent to="/" text="Configurar tamanho de página" />
+        <ButtonComponent to="/database" text="Banco de Dados" />
+        <ButtonComponent to="/stats" text="Estatísticas" />
+      </NavBar>
+      {children}
+    </>
+  );
+};

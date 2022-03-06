@@ -10,10 +10,12 @@
 }
 
 :root {
-  --primary-color: #0E0066;
-  --secondary-color: #3F3CD9;
-  --foreground-color: #FFFFFF;
+  --primary-color: #0e0066;
+  --secondary-color: #3f3cd9;
+  --foreground-color: #ffffff;
   --placeholder-color: #666666;
+
+  --padding: 25px;
 
   --border-radius: 7px;
 }
@@ -33,6 +35,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
