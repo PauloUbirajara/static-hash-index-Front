@@ -1,3 +1,3 @@
-export * from './DatabasePage'
-export * from './SettingsPage'
-export * from './StatsPage'
+export { DatabasePage } from './Database/DatabasePage';
+export { SettingsPage } from './Settings/SettingsPage';
+export { StatsPage } from './Stats/StatsPage';
