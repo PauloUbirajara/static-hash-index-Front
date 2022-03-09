@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import axios from 'axios'
+
+import { onSuccess, onError } from '../../helper/Response'
 
 export const Database = styled.div`
   display: grid;
@@ -16,3 +19,14 @@ export const Database = styled.div`
 export type DatabaseProps = {
   pageSize: number;
 };
+
+export const searchForWordInDatabase = (word: string) => {
+  const endpoint = `http://localhost:5000/search?wordToSearch=${word}`
+
+  const promise = axios
+    .get(endpoint)
+    .then(onSuccess)
+    .catch(onError)
+
+  return promise
+}
