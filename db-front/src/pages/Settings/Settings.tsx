@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import axios from 'axios'
+
+import { onSuccess, onError } from '../../helper/Response'
 
 export const Settings = styled.div`
   display: grid;
@@ -15,3 +18,14 @@ export type SettingsProps = {
   pageSize: number;
   updatePageSize: Function;
 };
+
+export const updateDatabasePageSize = (pageSize: number) => {
+  const endpoint = `http://localhost:5000/?pageSize=${pageSize}`
+
+  const promise = axios
+    .get(endpoint)
+    .then(onSuccess)
+    .catch(onError)
+
+  return promise;
+}

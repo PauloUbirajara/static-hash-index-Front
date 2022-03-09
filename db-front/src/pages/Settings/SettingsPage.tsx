@@ -1,4 +1,4 @@
-import { Settings, SettingsProps } from './Settings';
+import { Settings, SettingsProps, updateDatabasePageSize } from './Settings';
 
 import { MainTemplate, CenteredDiv } from '../../common';
 import { ButtonComponent, IconEnum } from '../../components';
@@ -10,6 +10,10 @@ export const SettingsPage = (props: SettingsProps) => {
     const newPageSize = +el.target.value;
     updatePageSize(newPageSize);
   };
+
+  const onClick = () => {
+    updateDatabasePageSize(pageSize)
+  }
 
   return (
     <MainTemplate>
@@ -26,7 +30,7 @@ export const SettingsPage = (props: SettingsProps) => {
           <ButtonComponent
             icon={IconEnum.OPEN_DATABASE}
             text="Ver banco de dados"
-            to="/database"
+            onClick={onClick}
           />
         </Settings>
       </CenteredDiv>
