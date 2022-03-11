@@ -5,7 +5,7 @@ import { IconEnum } from '../Icon/IconComponent';
 export type ButtonProps = {
   text: string;
   onClick?: () => void;
-  to?: string;
+  to?: string | {};
   icon?: IconEnum;
 };
 

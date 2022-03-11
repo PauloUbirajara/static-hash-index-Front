@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 import { Database, DatabaseProps, searchForWordInDatabase } from './Database';
 
@@ -33,6 +33,10 @@ export const DatabasePage = (props: DatabaseProps) => {
             icon={IconEnum.SEARCH}
             text="Pesquisar"
             onClick={() => searchForWordInDatabase(word)}
+            to={{
+              pathname: '/stats',
+              state: { alo: true }
+            }}
           />
         </Database>
       </CenteredDiv>

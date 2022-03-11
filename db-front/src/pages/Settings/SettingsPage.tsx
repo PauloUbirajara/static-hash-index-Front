@@ -31,6 +31,7 @@ export const SettingsPage = (props: SettingsProps) => {
             icon={IconEnum.OPEN_DATABASE}
             text="Ver banco de dados"
             onClick={onClick}
+            to="/database"
           />
         </Settings>
       </CenteredDiv>

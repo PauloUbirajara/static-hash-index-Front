@@ -9,7 +9,7 @@ const ButtonComponent = (props: ButtonProps) => {
   if (to) {
     return (
       <>
-        <Link to={to}>
+        <Link to={to} onClick={onClick}>
           <Button>
             {icon && <IconComponent icon={icon} />}
             <span>{text}</span>
