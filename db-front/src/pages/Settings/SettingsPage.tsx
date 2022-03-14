@@ -1,18 +1,20 @@
-import { Settings, SettingsProps, updateDatabasePageSize } from './Settings';
-
+import { Settings } from './style';
+import { setupDatabasePageSize } from '../../services/setup';
 import { MainTemplate, CenteredDiv } from '../../common';
 import { ButtonComponent, IconEnum } from '../../components';
+import { useState } from 'react';
 
-export const SettingsPage = (props: SettingsProps) => {
-  const { pageSize, updatePageSize } = props;
+export const SettingsPage = (props: any) => {
 
+  const [pageSize, setPageSize] = useState();
   const onChange = (el: any) => {
-    const newPageSize = +el.target.value;
-    updatePageSize(newPageSize);
+    const newPageSize = el.target.value;
+    setPageSize(newPageSize);
   };
 
   const onClick = () => {
-    updateDatabasePageSize(pageSize)
+    setupDatabasePageSize(pageSize)
+    localStorage.setItem('pageSize', JSON.stringify(pageSize))
   }
 
   return (

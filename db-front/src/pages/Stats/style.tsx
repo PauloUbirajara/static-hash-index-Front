@@ -12,7 +12,3 @@ export const StatsRow = styled.p`
   gap: 10px;
   padding: 10px 0;
 `;
-
-export type StatsProps = {
-  pageSize: number;
-};

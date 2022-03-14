@@ -1,19 +1,30 @@
-import { useState } from 'react'
-
-import { Database, DatabaseProps, searchForWordInDatabase } from './Database';
-
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
+import { Database } from './style';
+import { searchForWordInDatabase } from '../../services/search';
 import { CenteredDiv, MainTemplate } from '../../common';
 import { ButtonComponent, IconEnum } from '../../components';
 
-export const DatabasePage = (props: DatabaseProps) => {
+export const DatabasePage = (props: any) => {
   /*
    * O que deve ser mostrado para o usuário é a página que foi
    * buscada e o custo por acesso à páginas
    */
+  const location = useLocation()
   const [word, setWord] = useState('')
+
+  useEffect(() => {
+    console.log(location)
+  }, [location])
 
   const onChange = (el: any) => {
     setWord(el.target.value)
+  }
+
+  const handleClickButton = () => {
+    searchForWordInDatabase(word).then(data => {
+      localStorage.setItem('searchValue', JSON.stringify(data.data))
+    })
   }
 
   return (
@@ -32,11 +43,8 @@ export const DatabasePage = (props: DatabaseProps) => {
           <ButtonComponent
             icon={IconEnum.SEARCH}
             text="Pesquisar"
-            onClick={() => searchForWordInDatabase(word)}
-            to={{
-              pathname: '/stats',
-              state: { alo: true }
-            }}
+            onClick={handleClickButton}
+            to='/stats'
           />
         </Database>
       </CenteredDiv>

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { SettingsPage, DatabasePage, StatsPage } from './pages';
 
 const App = () => {
-  const [pageSize, setPageSize] = useState(1);
 
   return (
     <Router>
@@ -12,16 +11,16 @@ const App = () => {
         <Route
           path="/"
           element={
-            <SettingsPage pageSize={pageSize} updatePageSize={setPageSize} />
+            <SettingsPage />
           }
         />
         <Route
           path="/database"
-          element={<DatabasePage pageSize={pageSize} />}
+          element={<DatabasePage />}
         />
         <Route
           path="/stats"
-          element={<StatsPage pageSize={pageSize} />}
+          element={<StatsPage />}
         />
       </Routes>
     </Router>
