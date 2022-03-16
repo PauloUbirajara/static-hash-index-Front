@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const StatsContainer = styled.div`
+  display: grid;  
+  gap: 15px;  
+`
+
 export const Stats = styled.div`
   background: var(--primary-color);
   color: var(--foreground-color);
